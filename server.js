@@ -20,3 +20,11 @@ app.listen(PORT, function() {
     // Log (server-side) when our server has started
     console.log("http://localhost:" + PORT);
   });
+
+  app.get("/", function(req, res) {
+    res.sendFile('public/home.html' , { root : __dirname});
+});
+
+app.get("/survey", function(req, res){
+    res.sendFile('public/survey.html' , { root : __dirname});
+});
